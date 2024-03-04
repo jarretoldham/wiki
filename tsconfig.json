@@ -28,7 +28,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "markdoc/tags/Callout.tsx"
+    "components/callout.tsx"
   ],
   "exclude": ["node_modules"]
 }

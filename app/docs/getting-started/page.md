@@ -12,6 +12,12 @@ This is a test
 I have a message for you
 {% /callout %}
 
+```javascript
+let test = 1;
+function foo = () => { console.log('bar') };
+```
+
 ```bash
-dotnet build
+cd ../test
+dotnet pack /p:Version=1.0
 ```
