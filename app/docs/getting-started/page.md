@@ -2,6 +2,10 @@
 title: Getting started with Markdoc
 author: Jarret Oldham
 description: How to get started with Markdoc
+nextjs:
+  metadata:
+    title: Getting started with Markdoc
+    description: How to get started with Markdoc
 ---
 
 {% partial file="header.md" /%}
@@ -27,3 +31,7 @@ dotnet pack /p:Version=1.0
 This is another paragraph
 
 And another paragraph
+
+### Third Heading
+
+## Another heading

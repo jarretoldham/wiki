@@ -28,7 +28,7 @@ export default function DocsPage() {
       title: "Tech Documentation",
       subtitle: "Internal product and solution documentation",
       link: {
-        url: "",
+        url: "/docs/tech-documentation",
         text: "RTFM",
       },
       description: "I wonder if I can get the markdown frontmatter here",

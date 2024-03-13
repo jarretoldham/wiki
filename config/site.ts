@@ -16,8 +16,8 @@ const navItems = [
 ];
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Wiki",
+  description: "A Next.js wiki powered by Markdoc",
   navItems: navItems,
   navMenuItems: navItems,
   links: {
