@@ -16,11 +16,13 @@ export function TableOfContents({ toc }: any) {
     return null;
   }
 
+  const hoverColor = "green-500";
+
   return (
     <>
       <Divider orientation="vertical" className="h-100" />
       <nav className="w-100 border-l-default-100">
-        <h6>Contents</h6>
+        <h6 className="text-xl font-light">Contents</h6>
         <Divider className="w-full" />
         <ul className="flex-col">
           {items.map((item: any) => {
@@ -32,12 +34,21 @@ export function TableOfContents({ toc }: any) {
                 key={item.title}
                 className={[
                   active ? "active" : undefined,
-                  item.level === 3 ? "pl-5" : undefined,
+                  item.level === 3 ? "pl-5 text-base" : undefined,
+                  "font-light",
                 ]
                   .filter(Boolean)
                   .join(" ")}
               >
-                <Link href={href}>{item.title}</Link>
+                <Link
+                  href={href}
+                  className={[
+                    `hover:text-${hoverColor}`,
+                    `hover:border-b-1 border-${hoverColor}`,
+                  ].join(" ")}
+                >
+                  {item.title}
+                </Link>
               </li>
             );
           })}

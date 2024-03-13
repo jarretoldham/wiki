@@ -1,7 +1,6 @@
 import React from "react";
 
 import { TableOfContents } from "@/components/table-of-contents";
-import { Divider } from "@nextui-org/divider";
 
 export function Document({ headings, children }: any) {
   //   console.log(children);
