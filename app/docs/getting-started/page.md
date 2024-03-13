@@ -21,3 +21,9 @@ function foo = () => { console.log('bar') };
 cd ../test
 dotnet pack /p:Version=1.0
 ```
+
+## Secondary Heading
+
+This is another paragraph
+
+And another paragraph
