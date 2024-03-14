@@ -1,22 +1,29 @@
+"use client";
+
 import * as React from "react";
 import { Icon } from "./Icon";
+import { useTheme } from "next-themes";
 
 const TYPE_MAP = {
   note: {
     icon: "information-circle",
-    iconColor: "#8792a2",
+    iconColor: "text-foreground",
+    borderColor: "border-zinc-600",
   },
   warning: {
     icon: "warning",
-    iconColor: "#d97917",
+    iconColor: "text-orange-600",
+    borderColor: "border-orange-600",
   },
   check: {
     icon: "checkmark-circle",
-    iconColor: "var(--black)",
+    iconColor: "text-foreground",
+    borderColor: "border-zinc-600",
   },
   error: {
     icon: "warning",
-    iconColor: "#ed5f74",
+    iconColor: "text-red-600",
+    borderColor: "border-red-600",
   },
 };
 
@@ -27,15 +34,28 @@ type CalloutProps = {
 };
 
 export function Callout({ title, children, type }: CalloutProps) {
-  const { icon, iconColor } = TYPE_MAP[type] || TYPE_MAP.note;
+  const { icon, iconColor, borderColor } = TYPE_MAP[type] || TYPE_MAP.note;
+
+  const { theme, setTheme } = useTheme();
+
+  const colors: any = {
+    light: "bg-zinc-200",
+    dark: "bg-zinc-800",
+  };
+  const background = theme ? colors[theme] : colors.dark;
+
   return (
-    <div className="my-5 px-5 py-3 border light:bg-slate-500 border-slate-900 dark:bg-slate-800 rounded-sm drop-shadow-lg">
-      <div className="flex icon">
+    <div
+      className={`flex flex-row items-center m-5 px-5 py-3 border ${borderColor} ${background} rounded drop-shadow`}
+    >
+      <div className="flex mr-5">
         <Icon icon={icon} color={iconColor} />
       </div>
-      <span className="title text-lg font-semibold">{title}</span>
-      <div className="copy">
-        <span>{children}</span>
+      <div className="flex flex-col">
+        <span className="text-base">{title}</span>
+        <div className="text-sm">
+          <span>{children}</span>
+        </div>
       </div>
     </div>
   );

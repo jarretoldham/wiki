@@ -12,8 +12,16 @@ nextjs:
 
 This is a test
 
-{% callout title="Hey you!" icon="idk" %}
-I have a message for you
+{% callout title="Hey you!" type="warning" %}
+I have a message for you!
+
+You can make support for custom markdown tags that are rendered by your react components!
+{% /callout %}
+
+{% callout type="check" %}
+
+This is another type of callout, all rendered by the @/components/callout component
+
 {% /callout %}
 
 ```javascript

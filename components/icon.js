@@ -93,7 +93,7 @@ const svgs = {
 
 export function Icon({ icon, color = "inherit" }) {
   return (
-    <span className="icon">
+    <span className={`icon ${color}`}>
       {svgs[icon] || null}
       <style jsx>
         {`
@@ -105,7 +105,6 @@ export function Icon({ icon, color = "inherit" }) {
             height: 1em;
             min-width: 16px;
             box-sizing: content-box;
-            color: ${color};
           }
 
           .icon :global(svg) {

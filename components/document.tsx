@@ -15,7 +15,7 @@ export function Document({ headings, children }: any) {
    * @markdoc/document.markdoc.ts
    */
   return (
-    <section className="w-90 flex flex-row justify-center space-x-5">
+    <section className="w-full flex flex-row space-x-5">
       <article className="w-9/12">{children}</article>
       <TableOfContents toc={toc} className="w-3/12" />
     </section>

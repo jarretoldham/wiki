@@ -1,4 +1,4 @@
-import { TableOfContents } from "@/components/table-of-contents";
+import DocumentBreadcrumbs from "@/components/document-breadcrumbs";
 
 function collectHeadings(node: any, sections: any = []) {
   if (node) {
@@ -28,5 +28,10 @@ export default function DocsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section className="gap-4 py-2 md:py-5">{children}</section>;
+  return (
+    <div className="flex flex-col px-7 md:px-4">
+      <DocumentBreadcrumbs />
+      <section className="gap-4 py-2 md:py-5">{children}</section>;
+    </div>
+  );
 }
