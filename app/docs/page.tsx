@@ -13,16 +13,16 @@ export default function DocsPage() {
         url: "/docs/getting-started",
         text: "Get Started",
       },
-      description: "I wonder if I can get the markdown frontmatter here",
+      description: "Using Markdoc and Markdown to power your wiki site",
     },
     {
       title: "Standards & Guidelines",
       subtitle: "Coding standards, guidelines, and more",
       link: {
-        url: "",
+        url: "coding-standards",
         text: "More Information",
       },
-      description: "I wonder if I can get the markdown frontmatter here",
+      description: "Coding standards, guidelines, and more",
     },
     {
       title: "Tech Documentation",
@@ -31,7 +31,8 @@ export default function DocsPage() {
         url: "/docs/tech-documentation",
         text: "RTFM",
       },
-      description: "I wonder if I can get the markdown frontmatter here",
+      description:
+        "More information on Markdoc, Next.js, and other libraries used to create this template",
     },
   ];
 
@@ -44,9 +45,12 @@ export default function DocsPage() {
         </h2>
       </div>
       <Divider className="mb-5" />
-      <div className="grid grid-cols-3 gap-4 w-max">
+      <div className="flex flex-col md:flex-row gap-4 w-full">
         {sections.map((section) => (
-          <Card key={section.link.url} className="max-w-[400px] p-3">
+          <Card
+            key={section.link.url}
+            className="bg-background-400 max-w-[400px] p-3"
+          >
             <CardHeader className="flex flex-col items-start">
               <h3 className={title({ color: "green", size: "xs" })}>
                 {section.title}
@@ -54,12 +58,19 @@ export default function DocsPage() {
               <p className="text-small text-default-500">{section.subtitle}</p>
             </CardHeader>
             <Divider />
-            <CardBody>
+            <CardBody className="align-middle">
               <p>{section.description}</p>
             </CardBody>
             <Divider />
-            <CardFooter>
-              <Link href={section.link.url}>{section.link.text}</Link>
+            <CardFooter className="p-2">
+              <Link
+                href={section.link.url}
+                color="primary"
+                size="md"
+                underline="hover"
+              >
+                {section.link.text}
+              </Link>
             </CardFooter>
           </Card>
         ))}

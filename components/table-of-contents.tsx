@@ -16,11 +16,8 @@ export function TableOfContents({ toc }: any) {
     return null;
   }
 
-  const hoverColor = "green-500";
-
   return (
     <>
-      <Divider orientation="vertical" className="h-100" />
       <nav className="w-100 border-l-default-100">
         <h6 className="text-xl font-light">Contents</h6>
         <Divider className="w-full" />

@@ -37,3 +37,7 @@ npm run dev
 ## License
 
 Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
+
+## Markdoc Language Server VS Code Extension
+
+https://github.com/markdoc/language-server
