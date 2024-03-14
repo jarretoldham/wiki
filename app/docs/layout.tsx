@@ -1,4 +1,3 @@
-import { markdoc } from "./getting-started/page.md";
 import { TableOfContents } from "@/components/table-of-contents";
 
 function collectHeadings(node: any, sections: any = []) {
@@ -29,12 +28,5 @@ export default function DocsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const toc = markdoc?.content ? collectHeadings(markdoc?.content.content) : [];
-
-  return (
-    <>
-      <section className="gap-4 py-5 md:py-5">{children}</section>
-      <TableOfContents toc={toc} />
-    </>
-  );
+  return <section className="gap-4 py-2 md:py-5">{children}</section>;
 }

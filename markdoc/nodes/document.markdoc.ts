@@ -4,56 +4,41 @@ import yaml from "js-yaml";
 
 import type { Node, Config } from "@markdoc/markdoc";
 
-function generateID(children: any, attributes: any) {
-  if (attributes.id && typeof attributes.id === "string") {
-    return attributes.id;
-  }
-  return children
-    .filter((child: any) => typeof child === "string")
-    .join(" ")
-    .replace(/[?]/g, "")
-    .replace(/\s+/g, "-")
-    .toLowerCase();
-}
+function collectHeadings(nodes: any[], sections: any[] = []) {
+  for (var i = 0; i < nodes.length; i++) {
+    const node = nodes[i];
+    if (node && node.name === "Heading") {
+      const title = node.children[0];
 
-function collectHeadings(docNode: Node, sections: any[] = []) {
-  if (docNode) {
-    for (const node of docNode.children) {
-      if (node.type === "heading") {
-        //yikes - idk why I have to traverse into this so much
-        const titleNode = node.children[0].children[0];
-        const title = titleNode.attributes.content;
-        if (typeof title === "string") {
-          sections.push({
-            ...node.attributes,
-            title,
-            //TODO: figure out how to get the heading ID from the custom attribute
-            id: "test",
-          });
-        }
-      }
-
-      if (node.children) {
-        collectHeadings(node, sections);
+      if (typeof title === "string") {
+        sections.push({
+          ...node.attributes,
+          title,
+        });
       }
     }
-
-    return sections;
   }
+  return sections;
 }
 
 export const document = {
   ...nodes.document,
   render: Document,
   transform(node: Node, config: Config) {
-    // console.log(node);
+    /**
+     * this takes the passed in document node and transforms it into a renderable
+     * renderable tree based on the markdoc configuration as definted in next.config
+     */
+    const children = node.transformChildren(config);
+    // pase the headings from the renderable tree
+    const headings = collectHeadings(children);
     return new Tag(
       "Document",
       {
         frontmatter: yaml.load(node.attributes.frontmatter),
-        headings: collectHeadings(node),
+        headings: headings,
       },
-      node.transformChildren(config),
+      children,
     );
   },
 };

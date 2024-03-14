@@ -3,15 +3,16 @@ import React from "react";
 import { TableOfContents } from "@/components/table-of-contents";
 
 export function Document({ headings, children }: any) {
-  //   console.log(children);
-  // console.log(markdoc);
   const toc = headings ?? [];
 
-  // console.log(headings);
   /**
    * Typically you would just render children here, but we are adding
-   * this extra branch in order to pop up the editor that reveals
-   * the source content for each document
+   * this extra branch to render a table of contents, because the markdoc object
+   * isn't available in the app router
+   * https://github.com/markdoc/next.js/pull/30#issuecomment-1650148171
+   *
+   * the headings are parsed out using the markdoc renderable tree in
+   * @markdoc/document.markdoc.ts
    */
   return (
     <section className="w-90 flex flex-row justify-center space-x-5">

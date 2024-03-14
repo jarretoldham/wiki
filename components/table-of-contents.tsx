@@ -40,13 +40,7 @@ export function TableOfContents({ toc }: any) {
                   .filter(Boolean)
                   .join(" ")}
               >
-                <Link
-                  href={href}
-                  className={[
-                    `hover:text-${hoverColor}`,
-                    `hover:border-b-1 border-${hoverColor}`,
-                  ].join(" ")}
-                >
+                <Link href={href} className="hover:border-b-1">
                   {item.title}
                 </Link>
               </li>
