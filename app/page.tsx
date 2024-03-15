@@ -14,7 +14,7 @@ export default function Home() {
         <h1 className={title({ color: "violet" })}>Better&nbsp;</h1>
         <br />
         <h2 className={subtitle({ class: "mt-4" })}>
-          A Markdoc-powered Next.js technology wiki
+          A Markdoc-powered Next.js wiki to improve your documentation solution
         </h2>
       </div>
 
