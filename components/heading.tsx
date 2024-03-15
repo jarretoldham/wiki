@@ -2,14 +2,11 @@
 
 import * as React from "react";
 import { usePathname } from "next/navigation";
-import { Divider } from "@nextui-org/divider";
 
 export function Heading({ id = "", level = 1, children, className }: any) {
   const path = usePathname();
   const isDocs = path?.startsWith("/docs");
   const Component: any = `h${level}`;
-
-  const border = level == 1 && <Divider className="my-2" />;
 
   const link = (
     <>
@@ -21,7 +18,6 @@ export function Heading({ id = "", level = 1, children, className }: any) {
           {children}
         </div>
       </Component>
-      {border}
     </>
   );
 
