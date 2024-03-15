@@ -1,7 +1,9 @@
 import { nodes } from "@markdoc/markdoc";
 import { CodeBlock } from "@/components/code-block";
 
-export const fence = {
+const fence = {
   render: CodeBlock,
   attributes: nodes.fence.attributes,
 };
+
+export default fence;

@@ -21,7 +21,7 @@ function collectHeadings(nodes: any[], sections: any[] = []) {
   return sections;
 }
 
-export const document = {
+const document = {
   ...nodes.document,
   render: Document,
   transform(node: Node, config: Config) {
@@ -42,3 +42,5 @@ export const document = {
     );
   },
 };
+
+export default document;
