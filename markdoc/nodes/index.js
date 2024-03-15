@@ -6,12 +6,14 @@ import document from "./document.markdoc";
  * it for the default link node
  * */
 import link from "../tags/link.markdoc";
+import image from "../tags/image.markdoc";
 
 const nodes = {
   fence,
   heading,
   document,
   link,
+  image,
 };
 
 export default nodes;

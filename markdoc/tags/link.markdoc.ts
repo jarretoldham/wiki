@@ -1,6 +1,6 @@
 import { AppLink } from "@/components/app-link";
 
-const nextLink = {
+const link = {
   render: AppLink,
   description: "Displays a NextUI link",
   attributes: {
@@ -24,4 +24,4 @@ const nextLink = {
   },
 };
 
-export default nextLink;
+export default link;

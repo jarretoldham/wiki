@@ -23,4 +23,4 @@ This is the tech documentation page
 ## Images
 
 Here is what an image looks like:
-![Foxit Webhook Status](../Images/foxit-webhook-status.png "Foxit Webhook Status")
+![Foxit Webhook Status](../assets/foxit-webhook-status.png "Foxit Webhook Status")

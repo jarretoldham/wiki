@@ -40,4 +40,6 @@ Licensed under the [MIT license](https://github.com/nextui-org/next-app-template
 
 ## Markdoc Language Server VS Code Extension
 
+this still isn't configured correctly I don't think
 https://github.com/markdoc/language-server
+https://markdoc.dev/docs/nextjs#advanced

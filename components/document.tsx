@@ -1,5 +1,4 @@
 import React from "react";
-import { Divider } from "@nextui-org/divider";
 import { TableOfContents } from "@/components/table-of-contents";
 
 export function Document({ headings, children }: any) {
@@ -17,10 +16,7 @@ export function Document({ headings, children }: any) {
   return (
     <section className="w-full flex flex-row space-x-5">
       <article className="w-full md:w-9/12">{children}</article>
-      <div className="hidden md:flex ml-5 w-3/12">
-        <Divider orientation="vertical" className="h-100 mr-5" />
-        <TableOfContents toc={toc} />
-      </div>
+      <TableOfContents toc={toc} className="hidden md:flex ml-5 w-3/12" />
     </section>
   );
 }

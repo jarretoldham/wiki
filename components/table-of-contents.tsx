@@ -7,7 +7,7 @@ export type TableOfContentsItem = {
   title: string;
 };
 
-export function TableOfContents({ toc }: any) {
+export function TableOfContents({ toc, className }: any) {
   const items = toc.filter(
     (item: any) => item.id && (item.level === 2 || item.level === 3),
   );
@@ -17,10 +17,9 @@ export function TableOfContents({ toc }: any) {
   }
 
   return (
-    <>
+    <div className={className}>
+      <Divider orientation="vertical" className="h-100 mr-5" />
       <nav className="w-100 border-l-default-100">
-        <h6 className="text-xl font-light">Contents</h6>
-        <Divider className="w-full" />
         <ul className="flex-col">
           {items.map((item: any) => {
             const href = `#${item.id}`;
@@ -32,12 +31,16 @@ export function TableOfContents({ toc }: any) {
                 className={[
                   active ? "active" : undefined,
                   item.level === 3 ? "pl-5 text-base" : undefined,
+                  item.level === 2 ? "mt-1" : "",
                   "font-light",
                 ]
                   .filter(Boolean)
                   .join(" ")}
               >
-                <Link href={href} className="hover:border-b-1">
+                <Link
+                  href={href}
+                  className="hover:border-b-1 border-foreground"
+                >
                   {item.title}
                 </Link>
               </li>
@@ -45,6 +48,6 @@ export function TableOfContents({ toc }: any) {
           })}
         </ul>
       </nav>
-    </>
+    </div>
   );
 }
