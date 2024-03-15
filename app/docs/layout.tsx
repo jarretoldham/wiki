@@ -1,3 +1,4 @@
+import "@/styles/docs.css";
 import DocumentBreadcrumbs from "@/components/document-breadcrumbs";
 
 function collectHeadings(node: any, sections: any = []) {

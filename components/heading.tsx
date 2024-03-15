@@ -14,8 +14,12 @@ export function Heading({ id = "", level = 1, children, className }: any) {
   const link = (
     <>
       <Component className={["heading", className].filter(Boolean).join(" ")}>
-        <div id={id} />
-        {children}
+        <div
+          id={id}
+          className="hover:after:content-['#'] after:text-primary after:ml-1 after:opacity-50"
+        >
+          {children}
+        </div>
       </Component>
       {border}
     </>

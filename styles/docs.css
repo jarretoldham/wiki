@@ -15,4 +15,19 @@
     @apply text-xl;
     @apply mb-3;
   }
+  p {
+    @apply my-2;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  li {
+    @apply ml-5;
+  }
 }

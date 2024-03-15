@@ -49,17 +49,23 @@ export default function DocsPage() {
         {sections.map((section) => (
           <Card
             key={section.link.url}
-            className="bg-background-400 max-w-[400px] p-3"
+            className="bg-background-400 w-full sm:w-1/2 md:w-1/3 p-3"
           >
             <CardHeader className="flex flex-col items-start">
-              <h3 className={title({ color: "green", size: "xs" })}>
+              <h3
+                className={[title({ color: "green", size: "xs" }), "mb-0"].join(
+                  " ",
+                )}
+              >
                 {section.title}
               </h3>
-              <p className="text-small text-default-500">{section.subtitle}</p>
+              <p className="text-small text-default-500 my-0">
+                {section.subtitle}
+              </p>
             </CardHeader>
             <Divider />
             <CardBody className="align-middle">
-              <p>{section.description}</p>
+              <p className="my-0">{section.description}</p>
             </CardBody>
             <Divider />
             <CardFooter className="p-2">
