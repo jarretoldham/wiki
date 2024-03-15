@@ -43,3 +43,7 @@ Licensed under the [MIT license](https://github.com/nextui-org/next-app-template
 this still isn't configured correctly I don't think
 https://github.com/markdoc/language-server
 https://markdoc.dev/docs/nextjs#advanced
+
+## Images
+
+- for self-hosted images and other static files (not in a url) The Image MD node and tag need for the image to be in `/public` for them to be able to be rendered. If in the `/public/images/your_image.png` directory, you need to use the `/images/your_image.png` as the image src.
