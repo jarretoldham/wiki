@@ -16,7 +16,7 @@ const nodes = {
   document,
   link,
   image,
-  hr
+  hr, 
 };
 
 export default nodes;

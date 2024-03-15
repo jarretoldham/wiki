@@ -1,3 +1,7 @@
+/** 
+* this is only applied to .md rendered documents with the custom document node 
+* @/components/document.tsx
+*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,16 +22,18 @@
   p {
     @apply my-2;
   }
-
   ul {
     @apply list-disc;
   }
-
   ol {
     @apply list-decimal;
   }
-
   li {
     @apply ml-5;
+  }
+  /* style standalone code elements not in a pre block */
+  code:not(pre code) {
+    @apply font-mono dark:bg-background-400 p-0.5 dark:border-background-600 border-2 rounded;
+    @apply bg-zinc-300 border-zinc-400;
   }
 }

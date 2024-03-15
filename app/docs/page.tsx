@@ -45,11 +45,11 @@ export default function DocsPage() {
         </h2>
       </div>
       <Divider className="mb-5" />
-      <div className="flex flex-col md:flex-row gap-4 w-full">
+      <div className="flex flex-col items-center md:items-stretch md:flex-row md:flex-wrap md:justify-center gap-4 w-full">
         {sections.map((section) => (
           <Card
             key={section.link.url}
-            className="bg-background-400 w-full sm:w-1/2 md:w-1/3 p-3"
+            className="bg-background-400 w-full md:w-5/12 lg:w-5/12 max-w-sm p-3"
           >
             <CardHeader className="flex flex-col items-start">
               <h3

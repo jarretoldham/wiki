@@ -52,8 +52,8 @@ export function Callout({ title, children, type }: CalloutProps) {
         <Icon icon={icon} color={iconColor} />
       </div>
       <div className="flex flex-col">
-        <span className="text-base">{title}</span>
-        <div className="text-sm">
+        <span className="font-medium">{title}</span>
+        <div>
           <span>{children}</span>
         </div>
       </div>

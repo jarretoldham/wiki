@@ -1,3 +1,4 @@
+import "@/styles/docs.css";
 import React from "react";
 import { TableOfContents } from "@/components/table-of-contents";
 

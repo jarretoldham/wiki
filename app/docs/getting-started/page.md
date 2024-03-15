@@ -38,7 +38,7 @@ dotnet pack /p:Version=1.0
 
 This is another paragraph
 
-And another paragraph
+you can add any `page.md` in a subdirectory in `/app/docs` and it will be added to the next.js router
 
 ### Third Heading
 
