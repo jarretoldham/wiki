@@ -12,7 +12,6 @@ export function AppTabs({
   color,
   labels,
 }: MarkdocTabs) {
-  console.log(variant, size);
   return (
     <div className="flex w-full flex-col">
       <Tabs variant={variant} size={size} fullWidth={fullWidth} color={color}>

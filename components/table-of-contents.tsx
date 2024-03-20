@@ -20,7 +20,7 @@ export function TableOfContents({ toc, className }: any) {
     <div className={className}>
       <Divider orientation="vertical" className="h-100 mr-5" />
       <nav className="w-100 border-l-default-100">
-        <ul className="flex-col list-none ml-0">
+        <ul className="flex-col list-none ml-0 fixed">
           {items.map((item: any) => {
             const href = `#${item.id}`;
             const active =
