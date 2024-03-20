@@ -49,8 +49,38 @@ you can add any `page.md` in a subdirectory in `/app/docs` and it will be added 
 Testing variables:
 {% $helloWorld %}
 
-{% if true %}
-You should see this
-{% else %}
-You should not see this
-{% /if %}
+You can use conditional statements to control document rendering:
+
+{% SideBySide %}
+
+```bash
+cd test
+```
+
+Another Columns
+
+{% /SideBySide %}
+
+## Tabs
+
+{% tabs variant="underlined" color="primary" fullWidth=true %}
+
+{% tab label="React" %}
+React content goes here
+{% /tab %}
+
+{% tab label="HTML" %}
+HTML content goes here
+{% /tab %}
+
+{% tab label="Code Block" %}
+Here is a code block
+
+```javascript
+const test = { foo: bar };
+export default test;
+```
+
+{% /tab %}
+
+{% /tabs %}
