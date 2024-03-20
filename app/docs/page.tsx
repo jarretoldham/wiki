@@ -3,37 +3,10 @@ import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
 import { Divider } from "@nextui-org/divider";
 import { Link } from "@nextui-org/link";
 import { title, subtitle } from "@/components/primitives";
+import docSections from "@/config/doc-sections";
 
 export default function DocsPage() {
-  const sections = [
-    {
-      title: "Getting Started",
-      subtitle: "Onboarding? Start here",
-      link: {
-        url: "/docs/getting-started",
-        text: "Get Started",
-      },
-      description: "I wonder if I can get the markdown frontmatter here",
-    },
-    {
-      title: "Standards & Guidelines",
-      subtitle: "Coding standards, guidelines, and more",
-      link: {
-        url: "",
-        text: "More Information",
-      },
-      description: "I wonder if I can get the markdown frontmatter here",
-    },
-    {
-      title: "Tech Documentation",
-      subtitle: "Internal product and solution documentation",
-      link: {
-        url: "",
-        text: "RTFM",
-      },
-      description: "I wonder if I can get the markdown frontmatter here",
-    },
-  ];
+  const sections = docSections;
 
   return (
     <>
@@ -44,22 +17,38 @@ export default function DocsPage() {
         </h2>
       </div>
       <Divider className="mb-5" />
-      <div className="grid grid-cols-3 gap-4 w-max">
+      <div className="flex flex-col items-center md:items-stretch md:flex-row md:flex-wrap md:justify-center gap-4 w-full">
         {sections.map((section) => (
-          <Card key={section.link.url} className="max-w-[400px] p-3">
+          <Card
+            key={section.link.url}
+            className="bg-background-400 w-full md:w-5/12 lg:w-5/12 max-w-sm p-3"
+          >
             <CardHeader className="flex flex-col items-start">
-              <h3 className={title({ color: "green", size: "xs" })}>
+              <h3
+                className={[title({ color: "green", size: "xs" }), "mb-0"].join(
+                  " ",
+                )}
+              >
                 {section.title}
               </h3>
-              <p className="text-small text-default-500">{section.subtitle}</p>
+              <p className="text-small text-default-500 my-0">
+                {section.subtitle}
+              </p>
             </CardHeader>
             <Divider />
-            <CardBody>
-              <p>{section.description}</p>
+            <CardBody className="align-middle">
+              <p className="my-0">{section.description}</p>
             </CardBody>
             <Divider />
-            <CardFooter>
-              <Link href={section.link.url}>{section.link.text}</Link>
+            <CardFooter className="p-2">
+              <Link
+                href={section.link.url}
+                color="primary"
+                size="md"
+                underline="hover"
+              >
+                {section.link.text}
+              </Link>
             </CardFooter>
           </Card>
         ))}

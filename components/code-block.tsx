@@ -7,7 +7,6 @@ import {
   oneDark,
   oneLight,
 } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { useEffect, useState } from "react";
 
 export function CodeBlock({ children, "data-language": language }: any) {
   const { theme, setTheme } = useTheme();

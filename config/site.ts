@@ -9,22 +9,16 @@ const navItems = [
     label: "Docs",
     href: "/docs",
   },
-  {
-    label: "About",
-    href: "/about",
-  },
 ];
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Wiki",
+  description: "A Next.js wiki powered by Markdoc",
   navItems: navItems,
   navMenuItems: navItems,
   links: {
-    github: "https://github.com/nextui-org/nextui",
+    github: "https://github.com/jarretoldham/wiki",
     twitter: "https://twitter.com/getnextui",
-    docs: "https://nextui.org",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    docs: "https://markdoc.dev/",
   },
 };
