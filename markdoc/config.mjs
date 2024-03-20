@@ -5,11 +5,14 @@
 
 import tags from "./tags/index";
 import nodes from "./nodes/index";
-// import partials from "./partials/index";
+import variables from "./variables"; 
+import functions from "./functions"; 
 
 const config = {
   tags,
   nodes,
+  variables, 
+  functions,
 };
 
 export default config;

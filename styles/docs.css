@@ -9,15 +9,15 @@
 @layer base {
   h1 {
     @apply text-3xl;
-    @apply mb-5;
+    @apply my-5;
   }
   h2 {
     @apply text-2xl;
-    @apply mb-3;
+    @apply my-3;
   }
   h3 {
     @apply text-xl;
-    @apply mb-3;
+    @apply my-3;
   }
   p {
     @apply my-2;
@@ -34,6 +34,10 @@
   /* style standalone code elements not in a pre block */
   code:not(pre code) {
     @apply font-mono dark:bg-background-400 p-0.5 dark:border-background-600 border-2 rounded;
+    @apply bg-zinc-300 border-zinc-400;
+  }
+  blockquote {
+    @apply dark:bg-zinc-800 pl-5 py-2 border-l-5 my-2 dark:border-zinc-600 rounded;
     @apply bg-zinc-300 border-zinc-400;
   }
 }

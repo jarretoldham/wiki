@@ -42,4 +42,15 @@ you can add any `page.md` in a subdirectory in `/app/docs` and it will be added 
 
 ### Third Heading
 
+> This is what a blockquote looks like.
+
 ## Another heading
+
+Testing variables:
+{% $helloWorld %}
+
+{% if true %}
+You should see this
+{% else %}
+You should not see this
+{% /if %}
