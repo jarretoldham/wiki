@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactNode } from "react";
+import React from "react";
 import { usePathname } from "next/navigation";
 import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/breadcrumbs";
 
@@ -8,7 +8,7 @@ export default function DocumentBreadcrumbs() {
   const paths = usePathname();
   const pathNames = paths?.split("/").filter((path) => path.trim());
 
-  if (pathNames.length == 1) return;
+  if (pathNames.length == 1) return <></>;
 
   return (
     <Breadcrumbs variant="light" underline="hover">

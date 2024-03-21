@@ -88,6 +88,16 @@ This project uses the [NextJS Markdoc package](https://markdoc.dev/docs/nextjs) 
 
 There's a custom [markdoc language server extension](https://github.com/markdoc/language-server) for VS Code that is developed to support syntax highlighting, prop suggestions, and more. I did my best to configure this according to their docs and the [next specific instructions](https://markdoc.dev/docs/nextjs#advanced), but am still having some trouble getting some features (syntax suggestions, autocomplete, etc.) working on my machine.
 
+## Deploying
+
+This site is configured to be a static export for low-cost hosting, running the build command
+
+```bash
+npm run build
+```
+
+will generate a static export to the `/out` with all html, css, and js files. You might need to configure rewrites for incoming requests to go to the correct file as shown in this [Next.js doc](https://nextjs.org/docs/app/building-your-application/deploying/static-exports#deploying)
+
 ## License
 
 Licensed under the MIT license
